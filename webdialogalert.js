@@ -1,53 +1,54 @@
 
-var element = document.getElementsByTagName('robomx-webdialogalert')
-var dialog = document.createElement("DIALOG");
+var elm = document.getElementsByTagName('robomx-webdialogalert')[0]
+var dlg = document.createElement("DIALOG");
 
+const attr = element[0].getAttribute;
+var title = attr('title') || 'Dialog title';
+var description = attr('description') || 'Dialog description';
+var image = attr('imgSrc') || null;
+var width = attr('imgWidth') || "200px";
+var height = attr('imgHeight') || "200px";
+var position = attr('position');
 
-var title = element[0].getAttribute('title') || 'Dialog title';
-var description = element[0].getAttribute('description') || 'Dialog description';
-var image = element[0].getAttribute('imgSrc') || null;
-var width = element[0].getAttribute('imgWidth') || "200px";
-var height = element[0].getAttribute('imgHeight') || "200px";
-var position = element[0].getAttribute('position');
+dlg.setAttribute('open', 'open')
 
-dialog.setAttribute('open', 'open')
-
-dialog.innerHTML = '<img width="200px" src=' + image +'></img<h2>' + title + '</h2><br/>' + description;
-dialog.style.position = 'relative';
-dialog.style.width = '300px';
-dialog.style.height = '200px';
-dialog.style.display = 'flex';
+dlg.innerHTML = '<img width="200px" src=' + image +'></img<h2>' + title + '</h2><br/>' + description;
+dlg.style.position = 'relative';
+dlg.style.width = '300px';
+dlg.style.height = '200px';
+dlg.style.display = 'flex';
 
 // define css for main element
-element[0].style.position = 'fixed';
-element[0].style.margin = '10px';
+const elmStl = elm.style;
+elmStl.position = 'fixed';
+elmStl.margin = '10px';
 
 // align element on sheet
 switch(position) {
     case 'top-left':
-        element[0].style.top = '0';
-        element[0].style.left = '0';
+        elmStl.top = '0';
+        elmStl.left = '0';
         break;
     case 'top-right':
-        element[0].style.top = '0';
-        element[0].style.right = '0';
+        elmStl.top = '0';
+        elmStl.right = '0';
         break;
     case 'bottom-right':
-        element[0].style.bottom = '0';
-        element[0].style.right = '0';
+        elmStl.bottom = '0';
+        elmStl.right = '0';
         break;
     case 'center':
-        element[0].style.width = '100%';
-        element[0].style.height = '100%';
-        element[0].style.left = '0';
-        element[0].style.top = '0';
-        element[0].style.display = 'flex';
+        elmStl.width = '100%';
+        elmStl.height = '100%';
+        elmStl.left = '0';
+        elmStl.top = '0';
+        elmStl.display = 'flex';
         break;
     default:
         // by default align the element bottom-left
-        element[0].style.bottom = '0';
-        element[0].style.left = '0';
+        elmStl.bottom = '0';
+        elmStl.left = '0';
 }
 
 // render the dialog inside the main element
-element[0].appendChild(dialog);
+elm.appendChild(dialog);
