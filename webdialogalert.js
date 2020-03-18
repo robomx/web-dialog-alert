@@ -1,17 +1,16 @@
-
-var elm = document.getElementsByTagName('robomx-webdialogalert')[0]
+var elm = document.getElementsByTagName('robomx-webdialogalert')[0];
 var dlg = document.createElement("DIV");
 
-const attr = element[0].getAttribute;
-var title = attr('title') || 'Dialog title';
-var description = attr('description') || 'Dialog description';
-var image = attr('imgSrc') || null;
-var width = attr('imgWidth') || "200px";
-var height = attr('imgHeight') || "200px";
-var position = attr('position');
+// const attr = elm.getAttribute;
+var title = elm.getAttribute('title') || 'Dialog title';
+var description = elm.getAttribute('description') || 'Dialog description';
+var image = elm.getAttribute('imgSrc') || null;
+var width = elm.getAttribute('imgWidth') || "200px";
+var height = elm.getAttribute('imgHeight') || "200px";
+var position = elm.getAttribute('position');
 
 
-dialog.innerHTML = `<div class="roboMxPopContainer" draggable="true">
+dlg.innerHTML = `<div class="roboMxPopContainer" draggable="true">
         <div class="popHeader">
             <h3 class="headerText">` + title + `</h3>
         </div>
@@ -29,7 +28,8 @@ dialog.innerHTML = `<div class="roboMxPopContainer" draggable="true">
 
 
 // define css for main element
-element[0].style.position = 'fixed';
+const elmStl = elm.style;
+elmStl.position = 'fixed';
 
 // align element on sheet
 switch(position) {
@@ -46,10 +46,10 @@ switch(position) {
         elmStl.right = '0';
         break;
     case 'center':
-        element[0].style.margin = 'auto';
-        element[0].style.display = 'flex';
-        element[0].style.justifyContent = 'center';
-        element[0].style.width = "100%";
+        elmStl.margin = 'auto';
+        elmStl.display = 'flex';
+        elmStl.justifyContent = 'center';
+        elmStl.width = "100%";
         break;
     default:
         // by default align the element bottom-left
@@ -136,8 +136,8 @@ style.innerHTML = `.roboMxPopContainer {
 }`
 
 // render the dialog inside the main element
-element[0].appendChild(dialog);
-element[0].appendChild(style);
+elm.appendChild(dlg);
+elm.appendChild(style);
 
 
 if (image) {
