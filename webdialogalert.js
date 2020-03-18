@@ -1,14 +1,15 @@
 
-var element = document.getElementsByTagName('robomx-webdialogalert')
-var dialog = document.createElement("DIV");
+var elm = document.getElementsByTagName('robomx-webdialogalert')[0]
+var dlg = document.createElement("DIV");
 
+const attr = element[0].getAttribute;
+var title = attr('title') || 'Dialog title';
+var description = attr('description') || 'Dialog description';
+var image = attr('imgSrc') || null;
+var width = attr('imgWidth') || "200px";
+var height = attr('imgHeight') || "200px";
+var position = attr('position');
 
-var title = element[0].getAttribute('title') || 'Dialog title';
-var description = element[0].getAttribute('description') || 'Dialog description';
-var image = element[0].getAttribute('imgSrc') || null;
-var width = element[0].getAttribute('imgWidth') || "200px";
-var height = element[0].getAttribute('imgHeight') || "200px";
-var position = element[0].getAttribute('position');
 
 dialog.innerHTML = `<div class="roboMxPopContainer" draggable="true">
         <div class="popHeader">
@@ -33,16 +34,16 @@ element[0].style.position = 'fixed';
 // align element on sheet
 switch(position) {
     case 'top-left':
-        element[0].style.top = '0';
-        element[0].style.left = '0';
+        elmStl.top = '0';
+        elmStl.left = '0';
         break;
     case 'top-right':
-        element[0].style.top = '0';
-        element[0].style.right = '0';
+        elmStl.top = '0';
+        elmStl.right = '0';
         break;
     case 'bottom-right':
-        element[0].style.bottom = '0';
-        element[0].style.right = '0';
+        elmStl.bottom = '0';
+        elmStl.right = '0';
         break;
     case 'center':
         element[0].style.margin = 'auto';
@@ -52,8 +53,8 @@ switch(position) {
         break;
     default:
         // by default align the element bottom-left
-        element[0].style.bottom = '0';
-        element[0].style.left = '0';
+        elmStl.bottom = '0';
+        elmStl.left = '0';
 }
 
 var style =  document.createElement('STYLE');
