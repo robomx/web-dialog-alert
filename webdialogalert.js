@@ -125,6 +125,14 @@ style.innerHTML = `.roboMxPopContainer {
     top: -63px;
     font-family: 'Roboto';
 }
+.roboMxImageCover {
+       height: 176px;
+    width: 176px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 11px;
+}
 
 @keyframes pop {
     0% {
@@ -144,6 +152,7 @@ if (image) {
     var img = document.createElement('IMG');
     img.setAttribute('height', height);
     img.setAttribute('width', width);
+    img.setAttribute('class', 'roboMxImageCover')
     img.setAttribute('src', image);
     document.getElementsByClassName('roboMxImage')[0].appendChild(img);
 }
