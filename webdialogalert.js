@@ -30,7 +30,9 @@ dlg.innerHTML = `<div class="roboMxPopContainer">
 
 function roboMxDialogDismiss() {
     elm.style.display = "none";
+    sessionStorage.setItem('roboMxWebDialog', false);
 }
+
 // define css for main element
 const elmStl = elm.style;
 elmStl.position = 'fixed';
@@ -165,6 +167,8 @@ if (position.includes('right')) {
 }
 
 // render the dialog inside the main element
+if(sessionStorage.getItem('roboMxWebDialog') ){
+    
 elm.appendChild(dlg);
 elm.appendChild(style);
 
@@ -176,4 +180,5 @@ if (image) {
     img.setAttribute('class', 'roboMxImageCover')
     img.setAttribute('src', image);
     document.getElementsByClassName('roboMxImage')[0].appendChild(img);
+}
 }
