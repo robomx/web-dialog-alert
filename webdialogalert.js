@@ -19,13 +19,15 @@ dlg.innerHTML = `<div class="roboMxPopContainer">
                 <div class="roboMxImage"></div>
                 <h4 class='roboMxContentText'>` + description + `</h4>
             </div>
-               <p class="roboMxLater">Later</p>
+               <p class="roboMxLater" onClick= "roboMxDialogDismiss()">Later</p>
                <p class="roboMxLearnMore">Learn More</p>
             </div>
         </div>
     </div>`;
 
-
+function roboMxDialogDismiss() {
+    elm.style.display = "none";
+}
 // define css for main element
 const elmStl = elm.style;
 elmStl.position = 'fixed';
