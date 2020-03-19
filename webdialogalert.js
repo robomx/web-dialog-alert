@@ -19,8 +19,11 @@ dlg.innerHTML = `<div class="roboMxPopContainer">
                 <div class="roboMxImage"></div>
                 <h4 class='roboMxContentText'>` + description + `</h4>
             </div>
-               <p class="roboMxLater" onClick= "roboMxDialogDismiss()">Later</p>
-               <p class="roboMxLearnMore">Learn More</p>
+          
+            </div>
+            <div class="roboMxGroupButtons">
+            <p class="roboMxLater" onclick= "roboMxDialogDismiss()">Later</p>
+            <p class="roboMxLearnMore">Learn More</p>
             </div>
         </div>
     </div>`;
@@ -45,7 +48,6 @@ switch(position) {
     case 'bottom-right':
         elmStl.bottom = '0';
         elmStl.right = '0';
-        elmStl.animation = "popRight"
         break;
     case 'center':
         elmStl.margin = 'auto';
@@ -73,7 +75,7 @@ if (dark == 'true') {
 style.innerHTML = `
 .roboMxPopContainer {
     background: ` + bgClr + `;
-    height: 250px;
+    height: 279px;
     width: 500px;
     border-radius: 5px;
     position: relative;
@@ -107,19 +109,32 @@ style.innerHTML = `
     color: ` + txtClr + `;
     display: flex;
     padding: 5px;
+    word-wrap: anywhere;
+    width: 279px;
+    line-height: 22px;
+    font-weight: lighter;
+}
+.roboMxGroupButtons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: start;
+    position: relative;
+    top: -16px;
 }
 .roboMxLater {
     position: relative;
-    right: 13px;
+    left: -44px;
     color: ` + btnClr + `;
     cursor: pointer;
 }
 .roboMxLearnMore {
     position: relative;
+    left: -18px;
     display: flex;
-    left: 7px;
     color: ` + txtClr + `;
     cursor: pointer;
+    width: 103px;
+    justify-content: flex-end;
     
 }
 .roboMxImage {
@@ -133,6 +148,7 @@ style.innerHTML = `
     justify-content: center;
     align-items: center;
     margin: 11px;
+    border-radius: 6px;
 }
 @keyframes pop {
     0% {
@@ -141,15 +157,12 @@ style.innerHTML = `
     100% {
         transform: none;
     }
-}
-@keyframes popRight {
-    0% {
-        transform: translate(1000px);
-    }
-    100% {
-        transform: none;
-    }
 }`
+
+// set keyframe 
+if (position.includes('right')) {
+    style.innerHTML = style.innerHTML.replace('translate(-1000px)', 'translate(1000px)')
+}
 
 // render the dialog inside the main element
 elm.appendChild(dlg);
