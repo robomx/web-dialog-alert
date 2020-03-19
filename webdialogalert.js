@@ -8,20 +8,19 @@ var image = elm.getAttribute('imgSrc') || null;
 var width = elm.getAttribute('imgWidth') || "200px";
 var height = elm.getAttribute('imgHeight') || "200px";
 var position = elm.getAttribute('position');
+var dark = elm.getAttribute('darkMode') || false;
 
-
-dlg.innerHTML = `<div class="roboMxPopContainer" draggable="true">
-        <div class="popHeader">
-            <h3 class="headerText">` + title + `</h3>
+dlg.innerHTML = `<div class="roboMxPopContainer">
+        <div class="roboMxPopHeader">
+            <h3 class="roboMxHeaderText">` + title + `</h3>
         </div>
-        <div class="popContentContainer">
-            <div class="popContent">
+        <div class="roboMxPopContentContainer">
+            <div class="roboMxPopContent">
                 <div class="roboMxImage"></div>
-                <h4 class='contentText'>` + description + `</h4>
+                <h4 class='roboMxContentText'>` + description + `</h4>
             </div>
-            <div class="popButtons">
-                <button class="NotKnow">Not Know</button>
-                <button class="LearnMore">Learn More</button>
+               <p class="roboMxLater">Later</p>
+               <p class="roboMxLearnMore">Learn More</p>
             </div>
         </div>
     </div>`;
@@ -44,6 +43,7 @@ switch(position) {
     case 'bottom-right':
         elmStl.bottom = '0';
         elmStl.right = '0';
+        elmStl.animation = "popRight"
         break;
     case 'center':
         elmStl.margin = 'auto';
@@ -53,90 +53,96 @@ switch(position) {
         break;
     default:
         // by default align the element bottom-left
-        elmStl.bottom = '0';
+        elmStl.bottom = '0';  
         elmStl.left = '0';
 }
-
 var style =  document.createElement('STYLE');
-style.innerHTML = `.roboMxPopContainer {
-    background: #302B2B;
+
+// set colors
+var bgClr = elm.getAttribute('bgColor') || '#fff'
+var txtClr = elm.getAttribute('txtColor') || '#373737'
+var btnClr = elm.getAttribute('btnColor') || '#6c6b6b'
+if (dark == 'true') {
+    bgClr = '#212121';
+    txtClr = '#ffffe9';
+    btnClr = '#909090';
+}
+
+style.innerHTML = `
+.roboMxPopContainer {
+    background: ` + bgClr + `;
     height: 250px;
     width: 500px;
     border-radius: 5px;
-    box-shadow: 0 0 6px;
     position: relative;
     animation: pop 1s linear;
     margin: 10px;
+    border: 1px solid #cacaca;
+    box-shadow: 0 0px 13px #d0cbcb  
 }
-
-.popHeader {
-    background: #393636;
+.roboMxPopHeader {
+    background: ` + bgClr + `;
     height: 55px;
     width: 100%;
     border-radius: 4px;
-    box-shadow: 0 4px 4px #000000;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-.headerText {
-    color: white;
-    font-family: 'Roboto';
+.roboMxHeaderText {
+    color: ` + txtClr + `;
 }
-
-.popContent {
+.roboMxPopContent {
     display: flex;
     flex-direction: row;
 }
-
-
-.contentText {
-    color: white;
+.roboMxPopContentContainer {
+    height: 194px;
     display: flex;
-    font-family: 'Roboto';
-    font-weight: lighter;
+    align-items: flex-end;
 }
-.LearnMore {
-    height: 43px;
-    width: 128px;
-    border: none;
-    margin: 8px;
-    background-color: #fff0;
-    font-size: 15px;
-    color: white;
-    font-weight: bold;
-}
-.NotKnow {
-    height: 43px;
-    width: 128px;
-    border: none;
-    margin: 8px;
-    background-color: #fff0;
-    font-size: 15px;
-    color: #c6c5c5;
-    font-weight: bold;
-}
-
-.popButtons {
+.roboMxContentText {
+    color: ` + txtClr + `;
     display: flex;
-    justify-content: flex-end;
+    padding: 5px;
+}
+.roboMxLater {
     position: relative;
-    top: -63px;
-    font-family: 'Roboto';
+    right: 13px;
+    color: ` + btnClr + `;
+    cursor: pointer;
+}
+.roboMxLearnMore {
+    position: relative;
+    display: flex;
+    left: 7px;
+    color: ` + txtClr + `;
+    cursor: pointer;
+    
+}
+.roboMxImage {
+    position: relative;
+    top: 3px;
 }
 .roboMxImageCover {
-       height: 176px;
+    height: 176px;
     width: 176px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 11px;
 }
-
 @keyframes pop {
     0% {
         transform: translate(-1000px);
+    }
+    100% {
+        transform: none;
+    }
+}
+@keyframes popRight {
+    0% {
+        transform: translate(1000px);
     }
     100% {
         transform: none;

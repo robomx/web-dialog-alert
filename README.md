@@ -39,3 +39,8 @@ Inspired from paper dialog seen on YouTube during COVID-19 outbreak.
 | `imgWidth`     | `300px` |    `px, em, %`     | Specify width of the image. |
 | `imgHeight`    | `200px` | `px, em, %` | Specify height of the image. |
 | `position`        | `bottom-left`  | `top-left, top-right, bottom-left, bottom-right, center`     | Specify position of the dialog box.       |
+| `darkMode`        | `false`  | `boolean`     | Dark mode setup.       |
+| `bgColor`        | `Hex Code, RGB`  | `#fff`     | Backgroung color of dialog box.       |
+| `txtColor`        | `Hex Code, RGB`  | `#373737`     | Text color of dialog content. |
+| `btnColor`        | `Hex Code, RGB`  | `#6c6b6b`     | Button color of 'Later'.       |
+
