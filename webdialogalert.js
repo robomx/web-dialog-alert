@@ -167,18 +167,18 @@ if (position.includes('right')) {
 }
 
 // render the dialog inside the main element
-if(sessionStorage.getItem('roboMxWebDialog') ){
+if(!sessionStorage.getItem('roboMxWebDialog') ){
     
-elm.appendChild(dlg);
-elm.appendChild(style);
+    elm.appendChild(dlg);
+    elm.appendChild(style);
 
 
-if (image) {
-    var img = document.createElement('IMG');
-    img.setAttribute('height', height);
-    img.setAttribute('width', width);
-    img.setAttribute('class', 'roboMxImageCover')
-    img.setAttribute('src', image);
-    document.getElementsByClassName('roboMxImage')[0].appendChild(img);
-}
+    if (image) {
+        var img = document.createElement('IMG');
+        img.setAttribute('height', height);
+        img.setAttribute('width', width);
+        img.setAttribute('class', 'roboMxImageCover')
+        img.setAttribute('src', image);
+        document.getElementsByClassName('roboMxImage')[0].appendChild(img);
+    }
 }
