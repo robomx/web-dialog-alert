@@ -12,6 +12,10 @@ Inspired from paper dialog seen on YouTube during COVID-19 outbreak.
 
     `npm i robomx-webdialogalert`
 
+* Add import.
+
+    `import 'robomx-webdialogalert/dist/webdialogalert';`
+
 ### Using JS script:
 * Add following line to bottom of your body tag.
 
