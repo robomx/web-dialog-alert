@@ -7,13 +7,15 @@ Inspired from paper dialog seen on YouTube during COVID-19 outbreak.
 
 ## How to integrate?
 
+#### Using NPM:
+* Install package.
+
+    `npm i robomx-webdialogalert`
+
+### Using JS script:
 * Add following line to bottom of your body tag.
 
-    `<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/RoboMx/Web-Floating-Dialog@master/webdialogalert.js">`
-
-    or
-
-    `<script type="text/javascript" src="webdialogalert.js"></script>`
+    `<script type="text/javascript" src="https://unpkg.com/robomx-webdialogalert@0.0.4/dist/webdialogalert.min.js"></script>`
 
 * Add `robomx-webdialogalert` tag before script file.
     Example:

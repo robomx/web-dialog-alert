@@ -1,6 +1,6 @@
 {
   "name": "robomx-webdialogalert",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Web dialog alert for apps.",
   "main": "webdialogalert.js",
   "scripts": {
@@ -13,7 +13,9 @@
   },
   "keywords": [
     "dialog",
-    "web"
+    "web",
+    "alert-users",
+    "paper-dialog"
   ],
   "author": "RoboMx",
   "license": "MIT",
