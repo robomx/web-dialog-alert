@@ -26,7 +26,7 @@ class RoboMxWebDialogAlert extends HTMLElement {
                 <p class="robomx-wda-subtitle">` + d + `</p>
                 <div class="robomx-wda-buttons">
                     <button class="robomx-wda-button-later" onclick="roboMxDialogDismiss()">Later</button>
-                    <button class="robomx-wda-button-more"><a class="robomx-wba-href" href="` + link + `">Learn More</a></button>
+                    <button class="robomx-wda-button-more"><a class="robomx-wba-href" target="_blank" href="` + link + `">Learn More</a></button>
                 </div>
             </div>
         </div>
