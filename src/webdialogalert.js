@@ -12,6 +12,7 @@ class RoboMxWebDialogAlert extends HTMLElement {
         var height = this.getAttribute('imgHeight') || "200px";
         var position = this.getAttribute('position');
         var dark = this.getAttribute('darkMode') || false;
+        var link = this.getAttribute('link') || 'https://example.com';
 
         dlg.innerHTML = `
 <div class="roboMxPopContainer"><div class="roboMxPopHeader"><h3 class="roboMxHeaderText">` + title + `</h3>
@@ -19,14 +20,14 @@ class RoboMxWebDialogAlert extends HTMLElement {
 <div class="roboMxPopContentContainer">
 <div class="roboMxPopContent">
 <div class="roboMxImage">
-` + `<img alt="" src="` + image + `" width="` + width + `" height="` + height + `" class="roboMxImageCover"/>` + `
+<img alt="" src="` + image + `" width="` + width + `" height="` + height + `" class="roboMxImageCover"/>` + `
 </div>
 <h4 class='roboMxContentText'>` + description + `</h4>
 </div>
 </div>
 <div class="roboMxGroupButtons">
 <p class="roboMxLater" onclick= "roboMxDialogDismiss()">Later</p>
-<p class="roboMxLearnMore">Learn More</p>
+<p class="roboMxLearnMore"><a target="_blank" href="` + link + `">Learn More</a></p>
 </div>
 </div>
 </div>`;
@@ -159,7 +160,7 @@ border-radius: 6px;
 }
 }`;
 
-            // set keyframe 
+            // set keyframe
             if (position.includes('right')) {
                 style.innerHTML = style.innerHTML.replace('translate(-1000px)', 'translate(1000px)');
             }

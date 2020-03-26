@@ -1,6 +1,6 @@
 {
   "name": "robomx-webdialogalert",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Web dialog alert for apps.",
   "main": "webdialogalert.js",
   "scripts": {
