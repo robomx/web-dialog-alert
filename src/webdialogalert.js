@@ -5,31 +5,32 @@ class RoboMxWebDialogAlert extends HTMLElement {
         var dlg = document.createElement("DIV");
         var shadow = this.attachShadow({mode: 'open'});
 
-        var title = this.getAttribute('title') || 'Dialog title';
-        var description = this.getAttribute('description') || 'Dialog description';
-        var image = this.getAttribute('imgSrc') || null;
-        var width = this.getAttribute('imgWidth') || "200px";
-        var height = this.getAttribute('imgHeight') || "200px";
+        var t = this.getAttribute('title') || 'Dialog title';
+        var d = this.getAttribute('description') || 'Dialog description';
+        var i = this.getAttribute('imgSrc') || null;
+        var width = this.getAttribute('imgWidth')
+        var height = this.getAttribute('imgHeight')
         var position = this.getAttribute('position');
         var dark = this.getAttribute('darkMode') || false;
         var link = this.getAttribute('link') || 'https://example.com';
 
         dlg.innerHTML = `
-<div class="roboMxPopContainer"><div class="roboMxPopHeader"><h3 class="roboMxHeaderText">` + title + `</h3>
-</div>
-<div class="roboMxPopContentContainer">
-<div class="roboMxPopContent">
-<div class="roboMxImage">
-<img alt="" src="` + image + `" width="` + width + `" height="` + height + `" class="roboMxImageCover"/>` + `
-</div>
-<h4 class='roboMxContentText'>` + description + `</h4>
-</div>
-</div>
-<div class="roboMxGroupButtons">
-<p class="roboMxLater" onclick= "roboMxDialogDismiss()">Later</p>
-<p class="roboMxLearnMore"><a target="_blank" href="` + link + `">Learn More</a></p>
-</div>
-</div>
+<div class="robomx-wda">
+    <div class="robomx-wda-columns">
+        <div class="robomx-wda-column-one">
+            <img class="robomx-wda-img" src=` + i + ` alt="" width="` + width + `" height="`+ height + `">
+        </div>
+        <div class="robomx-wda-column-two">
+            <div>
+                <p class="robomx-wda-title">` + t + `</p>
+                <p class="robomx-wda-subtitle">` + d + `</p>
+                <div class="robomx-wda-buttons">
+                    <button class="robomx-wda-button-later" onclick="roboMxDialogDismiss()">Later</button>
+                    <button class="robomx-wda-button-more"><a class="robomx-wba-href" href="` + link + `">Learn More</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>`;
 
         // define css for main element
@@ -74,89 +75,86 @@ class RoboMxWebDialogAlert extends HTMLElement {
         }
 
         style.innerHTML = `
-.roboMxPopContainer {
+.robomx-wda {
 background: ` + bgClr + `;
-height: 279px;
-width: 500px;
 border-radius: 5px;
-position: relative;
-animation: pop 1s linear;
+box-shadow: 0 0px 4px #d3d3d3;
+height: 240px;
+width: 573px;
+position: absolute;
+bottom: 0;
 margin: 10px;
-border: 1px solid #cacaca;
-box-shadow: 0 0px 13px #d0cbcb  
+animation: pop 1s linear;
 }
-.roboMxPopHeader {
-background: ` + bgClr + `;
-height: 55px;
-width: 100%;
-border-radius: 4px;
+.robomx-wda-columns {
 display: flex;
-justify-content: center;
-align-items: center;
+height: 100%;
 }
-.roboMxHeaderText {
+.robomx-wda-column-one {
+display: flex;
+flex-basis: 0;
+flex-grow: 1;
+flex-shrink: 1;
+}
+.robomx-wda-column-two {
+display: flex;
+flex-basis: 0;
+flex-grow: 1;
+flex-shrink: 1;
+padding: 0.75rem;
+}
+.robomx-wda-title {
+font-size: 20px;
+text-align: left;
+font-family: 'Roboto';
+}
+.robomx-wda-subtitle {
+text-align: justify;
+font-size: 16px;
+font-family: 'Roboto';
+height: 4.9em;
+overflow: hidden;
 color: ` + txtClr + `;
-}
-.roboMxPopContent {
-display: flex;
-flex-direction: row;
-}
-.roboMxPopContentContainer {
-height: 194px;
-display: flex;
-align-items: flex-end;
-}
-.roboMxContentText {
-color: ` + txtClr + `;
-display: flex;
-padding: 5px;
-word-wrap: anywhere;
-width: 279px;
-line-height: 22px;
 font-weight: lighter;
 }
-.roboMxGroupButtons {
+.robomx-wda-img {
+max-width: 100%;
+height: 92%;
+padding: 10px;
+}
+.robomx-wda-buttons {
 display: flex;
 justify-content: flex-end;
-align-items: start;
-position: relative;
-top: -16px;
+width: 272px;
+position: fixed;
+bottom: 20px;
 }
-.roboMxLater {
-position: relative;
-left: -44px;
-color: ` + btnClr + `;
+.robomx-wda-button-later {
+margin-right: 17px;
+background: transparent;
+border: none;
+font-family: 'Roboto';
+letter-spacing: 1px;
+font-size: 16px;
 cursor: pointer;
 }
-.roboMxLearnMore {
-position: relative;
-left: -18px;
-display: flex;
-color: ` + txtClr + `;
+.robomx-wda-button-more {
+background: transparent;
+border: none;
+font-family: 'Roboto';
+letter-spacing: 1px;
+font-size: 16px;
 cursor: pointer;
-width: 103px;
-justify-content: flex-end;
-
 }
-.roboMxImage {
-position: relative;
-top: 3px;
-}
-.roboMxImageCover {
-height: 176px;
-width: 176px;
-display: flex;
-justify-content: center;
-align-items: center;
-margin: 11px;
-border-radius: 6px;
+.robomx-wba-href{
+    text-decoration: none;
 }
 @keyframes pop {
 0% {
-    transform: translate(-1000px);
+transform: translate(-1000px);
 }
 100% {
-    transform: none;
+transform: none;
 }
 }`;
 
