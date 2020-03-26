@@ -1,0 +1,29 @@
+{
+  "name": "robomx-webdialogalert",
+  "version": "0.0.1",
+  "description": "Web dialog alert for apps.",
+  "main": "webdialogalert.js",
+  "scripts": {
+    "build": "node build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoboMx/Web-Floating-Dialog.git"
+  },
+  "keywords": [
+    "dialog",
+    "web"
+  ],
+  "author": "RoboMx",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RoboMx/Web-Floating-Dialog/issues"
+  },
+  "homepage": "https://github.com/RoboMx/Web-Floating-Dialog#readme",
+  "dependencies": {
+    "@node-minify/core": "^5.2.1",
+    "@node-minify/terser": "^5.2.1",
+    "fs-extra": "^9.0.0"
+  }
+}
