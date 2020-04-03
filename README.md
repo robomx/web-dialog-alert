@@ -19,7 +19,7 @@ Inspired from paper dialog seen on YouTube during COVID-19 outbreak.
 ### Using JS script:
 * Add following line to bottom of your body tag.
 
-    `<script type="text/javascript" src="https://unpkg.com/robomx-webdialogalert@0.0.5/dist/webdialogalert.min.js"></script>`
+    `<script type="text/javascript" src="https://unpkg.com/robomx-webdialogalert@latest/dist/webdialogalert.min.js"></script>`
 
 * Add `robomx-webdialogalert` tag before script file.
     Example:
