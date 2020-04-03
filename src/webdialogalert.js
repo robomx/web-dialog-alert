@@ -75,94 +75,10 @@ class RoboMxWebDialogAlert extends HTMLElement {
         }
 
         style.innerHTML = `
-// .robomx-wda {
-// background: ` + bgClr + `;
-// border-radius: 5px;
-// box-shadow: 0 0px 4px #d3d3d3;
-// height: 240px;
-// width: 573px;
-// position: absolute;
-// bottom: 0;
-// margin: 10px;
-// animation: pop 1s linear;
-// }
-// .robomx-wda-columns {
-// display: flex;
-// height: 100%;
-// }
-// .robomx-wda-column-one {
-// display: flex;
-// flex-basis: 0;
-// flex-grow: 1;
-// flex-shrink: 1;
-// }
-// .robomx-wda-column-two {
-// display: flex;
-// flex-basis: 0;
-// flex-grow: 1;
-// flex-shrink: 1;
-// padding: 0.75rem;
-// }
-// .robomx-wda-title {
-// font-size: 20px;
-// text-align: left;
-// font-family: 'Roboto';
-// }
-// .robomx-wda-subtitle {
-// text-align: justify;
-// font-size: 16px;
-// font-family: 'Roboto';
-// height: 4.9em;
-// overflow: hidden;
-// color: ` + txtClr + `;
-// font-weight: lighter;
-// }
-// .robomx-wda-img {
-// max-width: 100%;
-// height: 92%;
-// padding: 10px;
-// }
-// .robomx-wda-buttons {
-// display: flex;
-// justify-content: flex-end;
-// width: 272px;
-// position: fixed;
-// bottom: 20px;
-// }
-// .robomx-wda-button-later {
-// margin-right: 17px;
-// background: transparent;
-// border: none;
-// font-family: 'Roboto';
-// letter-spacing: 1px;
-// font-size: 16px;
-// cursor: pointer;
-// }
-// .robomx-wda-button-more {
-// background: transparent;
-// border: none;
-// font-family: 'Roboto';
-// letter-spacing: 1px;
-// font-size: 16px;
-// cursor: pointer;
-// }
-// .robomx-wba-href{
-//     text-decoration: none;
-// }
-// @keyframes pop {
-// 0% {
-// transform: translate(-1000px);
-// }
-// 100% {
-// transform: none;
-// }
-// }
-// *, ::before, ::after {
-//     box-sizing: inherit;
-// }
 
-
-
+*, ::before, ::after {
+    box-sizing: inherit;
+}
 .robomx-wda {
     background: ` + bgClr + `;
     border-radius: 5px;
