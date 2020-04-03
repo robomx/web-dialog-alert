@@ -75,87 +75,290 @@ class RoboMxWebDialogAlert extends HTMLElement {
         }
 
         style.innerHTML = `
+// .robomx-wda {
+// background: ` + bgClr + `;
+// border-radius: 5px;
+// box-shadow: 0 0px 4px #d3d3d3;
+// height: 240px;
+// width: 573px;
+// position: absolute;
+// bottom: 0;
+// margin: 10px;
+// animation: pop 1s linear;
+// }
+// .robomx-wda-columns {
+// display: flex;
+// height: 100%;
+// }
+// .robomx-wda-column-one {
+// display: flex;
+// flex-basis: 0;
+// flex-grow: 1;
+// flex-shrink: 1;
+// }
+// .robomx-wda-column-two {
+// display: flex;
+// flex-basis: 0;
+// flex-grow: 1;
+// flex-shrink: 1;
+// padding: 0.75rem;
+// }
+// .robomx-wda-title {
+// font-size: 20px;
+// text-align: left;
+// font-family: 'Roboto';
+// }
+// .robomx-wda-subtitle {
+// text-align: justify;
+// font-size: 16px;
+// font-family: 'Roboto';
+// height: 4.9em;
+// overflow: hidden;
+// color: ` + txtClr + `;
+// font-weight: lighter;
+// }
+// .robomx-wda-img {
+// max-width: 100%;
+// height: 92%;
+// padding: 10px;
+// }
+// .robomx-wda-buttons {
+// display: flex;
+// justify-content: flex-end;
+// width: 272px;
+// position: fixed;
+// bottom: 20px;
+// }
+// .robomx-wda-button-later {
+// margin-right: 17px;
+// background: transparent;
+// border: none;
+// font-family: 'Roboto';
+// letter-spacing: 1px;
+// font-size: 16px;
+// cursor: pointer;
+// }
+// .robomx-wda-button-more {
+// background: transparent;
+// border: none;
+// font-family: 'Roboto';
+// letter-spacing: 1px;
+// font-size: 16px;
+// cursor: pointer;
+// }
+// .robomx-wba-href{
+//     text-decoration: none;
+// }
+// @keyframes pop {
+// 0% {
+// transform: translate(-1000px);
+// }
+// 100% {
+// transform: none;
+// }
+// }
+// *, ::before, ::after {
+//     box-sizing: inherit;
+// }
+
+
+
 .robomx-wda {
-background: ` + bgClr + `;
-border-radius: 5px;
-box-shadow: 0 0px 4px #d3d3d3;
-height: 240px;
-width: 573px;
-position: absolute;
-bottom: 0;
-margin: 10px;
-animation: pop 1s linear;
+    background: ` + bgClr + `;
+    border-radius: 5px;
+    box-shadow: 0 0px 4px #d3d3d3;
+    height: 210px;
+    width: 511px;
+    position: absolute;
+    bottom: 0;
+    margin: 10px;
+    animation: pop 1s linear;
+    margin-inline-start: 20px;
+    margin-bottom: 20px;
 }
 .robomx-wda-columns {
-display: flex;
-height: 100%;
+    display: flex;
+    height: 100%;
 }
 .robomx-wda-column-one {
-display: flex;
-flex-basis: 0;
-flex-grow: 1;
-flex-shrink: 1;
+    display: flex;
+    flex-basis: 0;
+    flex-grow: 2;
+    flex-shrink: 1;
 }
 .robomx-wda-column-two {
-display: flex;
-flex-basis: 0;
-flex-grow: 1;
-flex-shrink: 1;
-padding: 0.75rem;
+    display: flex;
+    flex-basis: 0;
+    flex-grow: 3;
+    flex-shrink: 1;
+    padding: 0.75rem;
 }
-.robomx-wda-title {
-font-size: 20px;
-text-align: left;
-font-family: 'Roboto';
+.robomx-wda-title{
+    font-size: 20px;
+    font-family: 'Roboto';
 }
 .robomx-wda-subtitle {
-text-align: justify;
-font-size: 16px;
-font-family: 'Roboto';
-height: 4.9em;
-overflow: hidden;
-color: ` + txtClr + `;
-font-weight: lighter;
+    text-align: justify;
+    font-size: 16px;
+    font-family: 'Roboto';
+    height: 5em;
+    overflow: hidden;
+    color: ` + txtClr + `;
+    font-weight: lighter;
+    line-height: 20px;
 }
 .robomx-wda-img {
-max-width: 100%;
-height: 92%;
-padding: 10px;
+    max-width: 100%;
+    height: 100%;
 }
 .robomx-wda-buttons {
-display: flex;
-justify-content: flex-end;
-width: 272px;
-position: fixed;
-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+    height: 30px;
+    width: 293px;
 }
 .robomx-wda-button-later {
-margin-right: 17px;
-background: transparent;
-border: none;
-font-family: 'Roboto';
-letter-spacing: 1px;
-font-size: 16px;
-cursor: pointer;
+    margin-right: 17px;
+    background: transparent;
+    border: none;
+    font-family: 'Roboto';
+    letter-spacing: 1px;
+    font-size: 16px;
+    cursor: pointer;
 }
 .robomx-wda-button-more {
-background: transparent;
-border: none;
-font-family: 'Roboto';
-letter-spacing: 1px;
-font-size: 16px;
-cursor: pointer;
-}
-.robomx-wba-href{
-    text-decoration: none;
+    background: transparent;
+    border: none;
+    font-family: 'Roboto';
+    letter-spacing: 1px;
+    font-size: 16px;
+    cursor: pointer;
 }
 @keyframes pop {
-0% {
-transform: translate(-1000px);
+    0% {
+        transform: translate(-1000px);
+    }
+    100% {
+        transform: none;
+    }
 }
-100% {
-transform: none;
+
+@media only screen and (max-width: 600px){
+    .robomx-wda {
+        background: ` + bgClr + `;
+        border-radius: 5px;
+        box-shadow: 0 0px 4px #d3d3d3;
+        position: fixed;
+        width: unset;
+        height: 231px;
+        bottom: 0;
+        margin: 10px;
+        animation: pop 1s linear;
+    }
+    .robomx-wda-title{
+        font-size: 20px;
+        font-family: 'Roboto';
+    }
+    .robomx-wda-subtitle {
+        text-align: justify;
+        font-size: 15px;
+        font-family: 'Roboto';
+        height: 5em;
+        overflow: hidden;
+        color: ` + txtClr + `;
+        font-weight: lighter;
+        line-height: 20px;
+    }
+    .robomx-wda-buttons {
+        display: flex;
+        justify-content: flex-end;
+        height: unset;
+        position: static;
+        height: 50px;
+        align-items: flex-end;
+        width: 238px;
+
+    }
+    .robomx-wda-img {
+        max-width: 100%;
+        height: 180px;
+        padding: 9px;
+        margin: auto;
+    }
+    .robomx-wda-button-later {
+        margin-right: 17px;
+        background: transparent;
+        border: none;
+        font-family: 'Roboto';
+        letter-spacing: 1px;
+        font-size: 12px;
+        cursor: pointer;
+    }
+    .robomx-wda-button-more {
+        background: transparent;
+        border: none;
+        font-family: 'Roboto';
+        letter-spacing: 1px;
+        font-size: 12px;
+        cursor: pointer;
+    }
 }
+@media only screen and (max-width: 400px) {
+    .robomx-wda {
+        background: ` + bgClr + `;
+        border-radius: 5px;
+        box-shadow: 0 0px 4px #d3d3d3;
+        position: fixed;
+        width: unset;
+        height: unset;
+        bottom: 0;
+        margin: 10px;
+        animation: pop 1s linear;
+    }
+    .robomx-wda-title{
+        font-size: 18px;
+        font-family: 'Roboto';
+    }
+    .robomx-wda-subtitle {
+        text-align: justify;
+        font-size: 14px;
+        font-family: 'Roboto';
+        height: 5em;
+        overflow: hidden;
+        color: ` + txtClr + `;
+        font-weight: lighter;
+        line-height: 20px;
+    }
+    .robomx-wda-img {
+        max-width: 100%;
+        height: 162px;
+        margin: auto;
+        padding: 9px;
+    }
+    .robomx-wda-buttons {
+        display: flex;
+        justify-content: flex-end;
+        height: unset;
+        width: 190px;
+    
+    }
+    .robomx-wda-button-later {
+        margin-right: 17px;
+        background: transparent;
+        border: none;
+        font-family: 'Roboto';
+        letter-spacing: 1px;
+        font-size: 12px;
+        cursor: pointer;
+    }
+    .robomx-wda-button-more {
+        background: transparent;
+        border: none;
+        font-family: 'Roboto';
+        letter-spacing: 1px;
+        font-size: 12px;
+        cursor: pointer;
+    }
 }`;
 
             // set keyframe
