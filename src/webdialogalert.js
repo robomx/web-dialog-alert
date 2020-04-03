@@ -159,6 +159,11 @@ class RoboMxWebDialogAlert extends HTMLElement {
     }
 }
 
+.robomx-wba-href {
+    text-decoration: none;
+    color: #000;
+}
+
 @media only screen and (max-width: 600px){
     .robomx-wda {
         background: ` + bgClr + `;
