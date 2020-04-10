@@ -171,7 +171,7 @@ button {
         display: flex;
         box-shadow: 0 0px 4px #d3d3d3;
         animation: pop 1s linear;
-        margin: 5px !important;
+        margin: 3px !important;
     }
     .robomx-card-img {
         flex: 1;
