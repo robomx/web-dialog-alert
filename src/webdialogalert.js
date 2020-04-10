@@ -20,7 +20,7 @@ class RoboMxWebDialogAlert extends HTMLElement {
             <h4 class="robomx-title">` + t + `</h4>
             <h4 class="robomx-subtitle">` + d + `</h4>
             <div class="robomx-buttons">
-                <button class="robomx-later"><a class="robomx-wba-href" target="_blank" href="` + link + `">Later</a></button>
+                <button class="robomx-later" onclick="roboMxDialogDismiss()">Later</button>
                 <button class="robomx-visit"><a class="robomx-wba-href" target="_blank" href="` + link + `">Learn More</a></button>
             </div>
         </div>
