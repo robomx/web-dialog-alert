@@ -1,4 +1,5 @@
 # Web Floating Dialog
+[![HitCount](http://hits.dwyl.com/RoboMx/web-dialog-alert.svg)](http://hits.dwyl.com/RoboMx/web-dialog-alert)
 
 A dialog plugin to alert your website users about any important information.
 
