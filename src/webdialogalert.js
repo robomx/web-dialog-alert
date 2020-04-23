@@ -90,6 +90,7 @@ button {
     border-radius: 5px;
     animation: pop 1s linear;
     margin: 10px;
+    z-index: 9999;
 }
 
 .robomx-card-img {
@@ -146,6 +147,7 @@ button {
         border-radius: 5px;
         animation: pop 1s linear;
         margin: 3px !important;
+        z-index: 9999;
 }
     .robomx-later {
         background: none;
@@ -187,6 +189,7 @@ button {
         box-shadow: 0 0px 4px #d3d3d3;
         animation: pop 1s linear;
         margin: 3px !important;
+        z-index: 9999;
     }
     .robomx-card-img {
         flex: 1;
