@@ -7,8 +7,8 @@ class RoboMxWebDialogAlert extends HTMLElement {
         var t = this.getAttribute('title') || 'Dialog title';
         var d = this.getAttribute('description') || 'Dialog description';
         var i = this.getAttribute('imgSrc') || null;
-        var width = this.getAttribute('imgWidth')
-        var height = this.getAttribute('imgHeight')
+        var width = this.getAttribute('imgWidth') || '200px';
+        var height = this.getAttribute('imgHeight') || '200px';
         var position = this.getAttribute('position');
         var dark = this.getAttribute('darkMode') || false;
         var link = this.getAttribute('link') || 'https://example.com';
@@ -90,6 +90,7 @@ button {
     border-radius: 5px;
     animation: pop 1s linear;
     margin: 10px;
+    z-index: 9999;
 }
 
 .robomx-card-img {
@@ -146,6 +147,7 @@ button {
         border-radius: 5px;
         animation: pop 1s linear;
         margin: 3px !important;
+        z-index: 9999;
 }
     .robomx-later {
         background: none;
@@ -162,7 +164,22 @@ button {
         margin-left: -4px;
     }
 }
-
+@media screen and (-webkit-min-device-pixel-ratio:0){
+  .robomx-card-img {
+    flex: 1;
+    padding: 6px;
+    height: 200px;
+    width: 200px;
+} 
+}
+@-moz-document url-prefix() {
+  .robomx-card-img {
+    flex: 1;
+    padding: 6px;
+    height: unset;
+    width: unset;
+} 
+}
 @media only screen and (max-width: 600px) {
     .robomx-card {
         background: ` + bgClr + `;
@@ -172,6 +189,7 @@ button {
         box-shadow: 0 0px 4px #d3d3d3;
         animation: pop 1s linear;
         margin: 3px !important;
+        z-index: 9999;
     }
     .robomx-card-img {
         flex: 1;
@@ -203,7 +221,7 @@ button {
     .robomx-visit {
         background: none;
         border: none;
-        font-size: 15px;
+        font-size: 14px;
         letter-spacing: 1px;
     }
 }
