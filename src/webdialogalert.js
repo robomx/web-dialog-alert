@@ -149,6 +149,12 @@ button {
         margin: 3px !important;
         z-index: 9999;
 }
+.robomx-buttons {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 7px;
+        margin-top: -6px;
+    }
     .robomx-later {
         background: none;
         border: none;
@@ -179,6 +185,14 @@ button {
     height: unset;
     width: unset;
 } 
+}
+@media only screen and (max-width: 368px) {
+    .robomx-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 7px;
+    margin-top: -13px;
+}
 }
 @media only screen and (max-width: 600px) {
     .robomx-card {
