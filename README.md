@@ -36,6 +36,9 @@ Last add the tag:
             imgHeight="200px"
             position="bottom-left"
             link="example.com"
+            actionText="Learn More"
+            actionTarget="_blank"
+            dismissText="Later"
         ></robomx-webdialogalert>
 
 ## Output:
@@ -53,7 +56,9 @@ Last add the tag:
 | `imgHeight`    | `200px` | `px, em, %` | Specify height of the image. |
 | `position`        | `bottom-left`  | `top-left, top-right, bottom-left, bottom-right, center`     | Specify position of the dialog box.       |
 | `darkMode`        | `false`  | `boolean`     | Dark mode setup.       |
-| `bgColor`        | `Hex Code, RGB`  | `#fff`     | Backgroung color of dialog box.       |
-| `txtColor`        | `Hex Code, RGB`  | `#373737`     | Text color of dialog content. |
-| `btnColor`        | `Hex Code, RGB`  | `#6c6b6b`     | Button color of 'Later'.       |
-
+| `bgColor`        | `#fff`  | `Hex Code, RGB`     | Backgroung color of dialog box.       |
+| `txtColor`        | `#373737`  | `Hex Code, RGB`     | Text color of dialog content. |
+| `btnColor`        | `#6c6b6b`  | `Hex Code, RGB`     | Button color of 'Later'.       |
+| `link`        | `http://example.com`  | `URL`     | URL for action button.       |
+| `actionTarget`        | `_blank`  | `_blank, _self, _parent, _top`     | Target tab of action button.       |
+| `dismissText`        | `Later`  | `string word`     | Dismiss button text.       |

@@ -7,22 +7,24 @@ class RoboMxWebDialogAlert extends HTMLElement {
         var t = this.getAttribute('title') || 'Dialog title';
         var d = this.getAttribute('description') || 'Dialog description';
         var i = this.getAttribute('imgSrc') || null;
-        var width = this.getAttribute('imgWidth') || '200px';
-        var height = this.getAttribute('imgHeight') || '200px';
+        var w = this.getAttribute('imgWidth') || '200px';
+        var h = this.getAttribute('imgHeight') || '200px';
         var position = this.getAttribute('position');
         var dark = this.getAttribute('darkMode') || false;
         var link = this.getAttribute('link') || 'https://example.com';
-        var action = this.getAttribute('actionText') || 'Learn More'
+        var action = this.getAttribute('actionText') || 'Learn More';
+        var target = this.getAttribute('actionTarget') || '_blank';
+        var dismiss = this.getAttribute('dismissText') || 'Later';
 
         dlg.innerHTML = `
     <div class="rmx-wda-card">
-        <img  class="rmx-wda-img" width="` + width + `" height="`+ height + `" src=` + i + ` alt="" >
+        <img  class="rmx-wda-img" width="` + w + `" height="`+ h + `" src=` + i + ` alt="" >
         <div class="rmx-wda-card-content">
             <h4 class="rmx-wda-title">` + t + `</h4>
             <h4 class="rmx-wda-subtitle">` + d + `</h4>
             <div class="rmx-wda-buttons">
-                <button class="rmx-wda-later" onclick="document.getElementsByTagName('robomx-webdialogalert')[0].style.display = 'none';sessionStorage.setItem('roboMxWebDialog', false);">Later</button>
-                <button class="rmx-wda-visit"><a class="rmx-wda-wba-href" target="_blank" href="` + link + `">` + action + `</a></button>
+                <button class="rmx-wda-later" onclick="document.getElementsByTagName('robomx-webdialogalert')[0].style.display = 'none';sessionStorage.setItem('roboMxWebDialog', false);">` + dismiss + `</button>
+                <button class="rmx-wda-visit"><a class="rmx-wda-wba-href" target="` + target + `" href="` + link + `">` + action + `</a></button>
             </div>
         </div>
 
