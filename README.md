@@ -15,14 +15,17 @@ Inspired from paper dialog seen on YouTube during COVID-19 outbreak.
 
 * Add import.
 
-    `import 'robomx-webdialogalert/dist/webdialogalert';`
+    `import 'robomx-webdialogalert/dist/webdialogalert.min';`
+
 
 ### Using JS script:
 * Add following line to bottom of your body tag.
 
     `<script type="text/javascript" src="https://unpkg.com/robomx-webdialogalert@latest/dist/webdialogalert.min.js"></script>`
 
-* Add `robomx-webdialogalert` tag before script file.
+Last add the tag:
+
+`robomx-webdialogalert` tag before script file.
     Example:
 
         <robomx-webdialogalert
@@ -35,7 +38,8 @@ Inspired from paper dialog seen on YouTube during COVID-19 outbreak.
             link="example.com"
         ></robomx-webdialogalert>
 
-
+## Output:
+<img src="assets/output.png">
 
 ## Variables
 
@@ -43,6 +47,7 @@ Inspired from paper dialog seen on YouTube during COVID-19 outbreak.
 | --------- | ------- | --------|------- |
 | `title`     | `Dialog title` | `string content`  | Specify title of the dialog |
 | `description` | `Dialog description ` |  `string content` | Give brief information about the dialog.  |
+| `actionText` | `Learn More` | `string content` | `Action button text |
 | `imgSrc`  | `null` | `Image path` | Specify image source url or relative path. |
 | `imgWidth`     | `300px` |    `px, em, %`     | Specify width of the image. |
 | `imgHeight`    | `200px` | `px, em, %` | Specify height of the image. |

@@ -12,16 +12,17 @@ class RoboMxWebDialogAlert extends HTMLElement {
         var position = this.getAttribute('position');
         var dark = this.getAttribute('darkMode') || false;
         var link = this.getAttribute('link') || 'https://example.com';
+        var action = this.getAttribute('actionText') || 'Learn More'
 
         dlg.innerHTML = `
-    <div class="robomx-card">
-        <img  class="robomx-card-img"  src=` + i + ` alt="" >
-        <div class="robomx-card-content">
-            <h4 class="robomx-title">` + t + `</h4>
-            <h4 class="robomx-subtitle">` + d + `</h4>
-            <div class="robomx-buttons">
-                <button class="robomx-later" onclick="roboMxDialogDismiss()">Later</button>
-                <button class="robomx-visit"><a class="robomx-wba-href" target="_blank" href="` + link + `">Learn More</a></button>
+    <div class="rmx-wda-card">
+        <img  class="rmx-wda-img" width="` + width + `" height="`+ height + `" src=` + i + ` alt="" >
+        <div class="rmx-wda-card-content">
+            <h4 class="rmx-wda-title">` + t + `</h4>
+            <h4 class="rmx-wda-subtitle">` + d + `</h4>
+            <div class="rmx-wda-buttons">
+                <button class="rmx-wda-later" onclick="document.getElementsByTagName('robomx-webdialogalert')[0].style.display = 'none';sessionStorage.setItem('roboMxWebDialog', false);">Later</button>
+                <button class="rmx-wda-visit"><a class="rmx-wda-wba-href" target="_blank" href="` + link + `">` + action + `</a></button>
             </div>
         </div>
 
@@ -70,18 +71,16 @@ class RoboMxWebDialogAlert extends HTMLElement {
         }
 
         style.innerHTML = `
-
 :root {
     font-family: 'Roboto', sans-serif;
 }
-
 button {
     cursor: pointer;
 }
-.robomx-wba-href {
+.rmx-wda-wba-href {
     text-decoration: none;
 }
-.robomx-card {
+.rmx-wda-card {
     background: ` + bgClr + `;
     width: 515px;
     height: 215px;
@@ -92,55 +91,55 @@ button {
     margin: 10px;
     z-index: 9999;
 }
-
-.robomx-card-img {
+.rmx-wda-img {
     flex: 1;
     padding: 6px;
+    max-width: 200px;
+    max-height: 200px;  
+    margin: auto;
 }
-
-.robomx-card-content {
+.rmx-wda-card-content {
     flex: 2;
     padding: 6px;
 }
-
-.robomx-title {
+.rmx-wda-title {
     font-size: 17px;
+    width: 261px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-
-.robomx-subtitle {
+.rmx-wda-subtitle {
     max-height: 5.2em;
     overflow: hidden;
     height: 5.2em;
-    line-height: 20.2px;
+    line-height: 19.2px;
     color:  ` + txtClr + `;
     font-weight: lighter;
+    text-align: justify;
 }
-
-.robomx-buttons {
+.rmx-wda-buttons {
     display: flex;
     justify-content: flex-end;
     margin-right: 17px;
 }
-
-.robomx-later {
+.rmx-wda-later {
     background: none;
     border: none;
     margin-right: 16px;
     font-size: 16px;
     letter-spacing: 1px;
 }
-
-.robomx-visit {
+.rmx-wda-visit {
     background: none;
     border: none;
     font-size: 16px;
     letter-spacing: 1px;
 }
-
-@media only screen and (max-width: 354px) {
-    .robomx-card {
+@media only screen and (max-width: 534px) {
+    .rmx-wda-card {
         background: ` + bgClr + `;
-        width: 515px;
+        width: 98% !important;
         height: 215px;
         display: flex;
         box-shadow: 0 0px 4px #d3d3d3;
@@ -149,94 +148,44 @@ button {
         margin: 3px !important;
         z-index: 9999;
 }
-.robomx-buttons {
+.rmx-wda-img {
+    display:none;
+}
+.rmx-wda-title {
+    font-size: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 95vw !important;
+    word-break: break-word;
+}
+.rmx-wda-subtitle {
+    max-height: 6.8em !important;
+    overflow: hidden;
+    height: 92px !important;
+    line-height: 1.2;
+    color: #373737;
+    font-weight: lighter;
+}
+.rmx-wda-buttons {
         display: flex;
         justify-content: flex-end;
         margin-right: 7px;
         margin-top: -6px;
     }
-    .robomx-later {
+    .rmx-wda-later {
         background: none;
         border: none;
         margin-right: 16px;
-        font-size: 10px !important;
-        letter-spacing: 1px;
+        font-size: 18px !important;
+        letter-spacing: 0px !important;
     }
-    .robomx-visit {
+    .rmx-wda-visit {
         background: none;
         border: none;
-        font-size: 10px !important;
-        letter-spacing: 1px;
+        font-size: 18px !important;
+        letter-spacing: 0px !important;
         margin-left: -4px;
-    }
-}
-@media screen and (-webkit-min-device-pixel-ratio:0){
-  .robomx-card-img {
-    flex: 1;
-    padding: 6px;
-    height: 200px;
-    width: 200px;
-} 
-}
-@-moz-document url-prefix() {
-  .robomx-card-img {
-    flex: 1;
-    padding: 6px;
-    height: unset;
-    width: unset;
-} 
-}
-@media only screen and (max-width: 368px) {
-    .robomx-buttons {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 7px;
-    margin-top: -13px;
-}
-}
-@media only screen and (max-width: 600px) {
-    .robomx-card {
-        background: ` + bgClr + `;
-        width: 100%;
-        height: 200px;
-        display: flex;
-        box-shadow: 0 0px 4px #d3d3d3;
-        animation: pop 1s linear;
-        margin: 3px !important;
-        z-index: 9999;
-    }
-    .robomx-card-img {
-        flex: 1;
-        padding: 4px;
-        max-width: 150px;
-        height: 150px;
-        margin: auto;
-    }
-    .robomx-subtitle {
-        max-height: 4.8em;
-        overflow: hidden;
-        height: 4.8em;
-        line-height: 1.2;
-        color:  ` + txtClr + `;
-        font-weight: lighter;
-    }
-    .robomx-buttons {
-        display: flex;
-        justify-content: flex-end;
-        margin-right: 7px;
-    }
-    .robomx-later {
-        background: none;
-        border: none;
-        margin-right: 16px;
-        font-size: 15px;
-        letter-spacing: 1px;
-    }
-    .robomx-visit {
-        background: none;
-        border: none;
-        font-size: 14px;
-        letter-spacing: 1px;
     }
 }
 @keyframes pop {
@@ -259,11 +208,6 @@ button {
             shadow.appendChild(dlg);
         }
     }
-}
-
-function roboMxDialogDismiss() {
-    document.getElementsByTagName('robomx-webdialogalert')[0].style.display = "none";
-    sessionStorage.setItem('roboMxWebDialog', false);
 }
 
 customElements.define('robomx-webdialogalert', RoboMxWebDialogAlert);
