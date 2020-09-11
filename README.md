@@ -1,5 +1,6 @@
 # Web Floating Dialog
 [![HitCount](http://hits.dwyl.com/RoboMx/web-dialog-alert.svg)](http://hits.dwyl.com/RoboMx/web-dialog-alert)
+![Node.js Package](https://github.com/RoboMx/web-dialog-alert/workflows/Node.js%20Package/badge.svg)
 
 A dialog plugin to alert your website users about any important information.
 
