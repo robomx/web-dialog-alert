@@ -39,7 +39,9 @@ jobs:
         with:
           node-version: 10
           registry-url: https://npm.pkg.github.com/
+          scope: '@robomx'
       - run: npm ci
+      - run: git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com" && git config --global user.name "$GITHUB_ACTOR"
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
