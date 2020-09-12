@@ -42,6 +42,7 @@ jobs:
           node-version: 10
           registry-url: https://npm.pkg.github.com/
           scope: '@robomx'
+      - name: Install dependencies
         run: |
           echo @robomx:registry=https://npm.pkg.github.com/ >> .npmrc
           echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" > ~/.npmrc
