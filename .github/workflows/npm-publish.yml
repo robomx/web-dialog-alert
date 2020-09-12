@@ -41,7 +41,8 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@robomx'
       - run: npm ci
-      - run: echo @OWNER:registry=https://npm.pkg.github.com/ >> .npmrc
+      - run: npm run build
+      - run: echo @robomx:registry=https://npm.pkg.github.com/ >> .npmrc
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
