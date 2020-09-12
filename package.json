@@ -11,9 +11,6 @@
     "type": "git",
     "url": "git+https://github.com/RoboMx/Web-Floating-Dialog.git"
   },
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
-  },
   "keywords": [
     "dialog",
     "web",
