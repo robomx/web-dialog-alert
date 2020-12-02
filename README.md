@@ -1,4 +1,6 @@
 # Web Floating Dialog
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![HitCount](http://hits.dwyl.com/RoboMx/web-dialog-alert.svg)](http://hits.dwyl.com/RoboMx/web-dialog-alert)
 ![Node.js Package](https://github.com/RoboMx/web-dialog-alert/workflows/Node.js%20Package/badge.svg)
 
@@ -63,3 +65,11 @@ Last add the tag:
 | `link`        | `http://example.com`  | `URL`     | URL for action button.       |
 | `actionTarget`        | `_blank`  | `_blank, _self, _parent, _top`     | Target tab of action button.       |
 | `dismissText`        | `Later`  | `string word`     | Dismiss button text.       |
+
+
+<!-- Badges -->
+[npm-version-src]: https://img.shields.io/npm/v/robomx-webdialogalert/latest.svg
+[npm-version-href]: https://npmjs.com/package/robomx-webdialogalert
+
+[npm-downloads-src]: https://img.shields.io/npm/dt/robomx-webdialogalert.svg
+[npm-downloads-href]: https://npmjs.com/package/robomx-webdialogalert
