@@ -7,31 +7,33 @@
 A dialog plugin to alert your website users about any important information.
 
 ## Motivation
+
 Inspired from paper dialog seen on YouTube during COVID-19 outbreak.
 
 ## How to integrate?
 
-#### Using NPM:
+#### Using NPM
+
 * Install package.
 
-    `npm i robomx-webdialogalert`
+    `npm i robomx-webdialog` or `yarn add robomx-webdialog`
 
 * Add import.
 
-    `import 'robomx-webdialogalert/dist/webdialogalert.min';`
+    `import 'robomx-webdialog/dist/webdialog.min';`
 
+### Using JS script
 
-### Using JS script:
 * Add following line to bottom of your body tag.
 
-    `<script type="text/javascript" src="https://unpkg.com/robomx-webdialogalert@latest/dist/webdialogalert.min.js"></script>`
+    `<script type="text/javascript" src="https://unpkg.com/robomx-webdialog@latest/dist/webdialog.min.js"></script>`
 
 Last add the tag:
 
-`robomx-webdialogalert` tag before script file.
+`robomx-webdialog` tag before script file.
     Example:
 
-        <robomx-webdialogalert
+        <robomx-webdialog
             title="Dialog title"
             description="Dialog description"
             imgSrc="sample.png"
@@ -42,9 +44,10 @@ Last add the tag:
             actionText="Learn More"
             actionTarget="_blank"
             dismissText="Later"
-        ></robomx-webdialogalert>
+        ></robomx-webdialog>
 
-## Output:
+## Output
+
 <img src="assets/output.png">
 
 ## Variables
@@ -52,13 +55,13 @@ Last add the tag:
 | Attribute | Default | Accepts | Note|
 | --------- | ------- | --------|------- |
 | `title`     | `Dialog title` | `string content`  | Specify title of the dialog |
-| `description` | `Dialog description ` |  `string content` | Give brief information about the dialog.  |
+| `description` | `Dialog description` |  `string content` | Give brief information about the dialog.  |
 | `actionText` | `Learn More` | `string content` | `Action button text |
 | `imgSrc`  | `null` | `Image path` | Specify image source url or relative path. |
 | `imgWidth`     | `300px` |    `px, em, %`     | Specify width of the image. |
 | `imgHeight`    | `200px` | `px, em, %` | Specify height of the image. |
 | `position`        | `bottom-left`  | `top-left, top-right, bottom-left, bottom-right, center`     | Specify position of the dialog box.       |
-| `darkMode`        | `false`  | `boolean`     | Dark mode setup.       |
+| `darkMode`|`false`  | `boolean`     | Dark mode setup.       |
 | `bgColor`        | `#fff`  | `Hex Code, RGB`     | Backgroung color of dialog box.       |
 | `txtColor`        | `#373737`  | `Hex Code, RGB`     | Text color of dialog content. |
 | `btnColor`        | `#6c6b6b`  | `Hex Code, RGB`     | Button color of 'Later'.       |
@@ -68,8 +71,8 @@ Last add the tag:
 
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/robomx-webdialogalert/latest.svg
-[npm-version-href]: https://npmjs.com/package/robomx-webdialogalert
+[npm-version-src]: https://img.shields.io/npm/v/robomx-webdialog/latest.svg
+[npm-version-href]: https://npmjs.com/package/robomx-webdialog
 
-[npm-downloads-src]: https://img.shields.io/npm/dt/robomx-webdialogalert.svg
-[npm-downloads-href]: https://npmjs.com/package/robomx-webdialogalert
+[npm-downloads-src]: https://img.shields.io/npm/dt/robomx-webdialog.svg
+[npm-downloads-href]: https://npmjs.com/package/robomx-webdialog

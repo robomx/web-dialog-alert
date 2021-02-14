@@ -1,8 +1,8 @@
 {
-  "name": "robomx-webdialogalert",
-  "version": "0.1.3",
-  "description": "Web dialog alert for apps.",
-  "main": "webdialogalert.js",
+  "name": "robomx-webdialog",
+  "version": "2021.0.1",
+  "description": "Web dialog for apps.",
+  "main": "webdialog.js",
   "scripts": {
     "build": "node build.js",
     "test": "node ./node_modules/mocha/bin/mocha"

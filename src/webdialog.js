@@ -1,4 +1,4 @@
-class RoboMxWebDialogAlert extends HTMLElement {
+class RoboMxWebDialog extends HTMLElement {
     constructor() {
         super();
         var dlg = document.createElement("DIV");
@@ -23,7 +23,7 @@ class RoboMxWebDialogAlert extends HTMLElement {
             <h4 class="rmx-wda-title">` + t + `</h4>
             <h4 class="rmx-wda-subtitle">` + d + `</h4>
             <div class="rmx-wda-buttons">
-                <button class="rmx-wda-later" onclick="document.getElementsByTagName('robomx-webdialogalert')[0].style.display = 'none';sessionStorage.setItem('roboMxWebDialog', false);">` + dismiss + `</button>
+                <button class="rmx-wda-later" onclick="document.getElementsByTagName('robomx-webdialog')[0].style.display = 'none';sessionStorage.setItem('roboMxWebDialog', false);">` + dismiss + `</button>
                 <button class="rmx-wda-visit"><a class="rmx-wda-wba-href" target="` + target + `" href="` + link + `">` + action + `</a></button>
             </div>
         </div>
@@ -212,4 +212,4 @@ button {
     }
 }
 
-customElements.define('robomx-webdialogalert', RoboMxWebDialogAlert);
+customElements.define('robomx-webdialog', RoboMxWebDialog);
