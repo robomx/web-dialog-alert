@@ -15,17 +15,17 @@ Inspired from paper dialog seen on YouTube during COVID-19 outbreak.
 
 * Install package.
 
-    `npm i robomx-webdialog` or `yarn add robomx-webdialog`
+    `npm i @robomx/web-dialog` or `yarn add @robomx/web-dialog`
 
 * Add import.
 
-    `import 'robomx-webdialog/dist/webdialog.min';`
+    `import '@robomx/web-dialog/dist/webdialog.min';`
 
 ### Using JS script
 
 * Add following line to bottom of your body tag.
 
-    `<script type="text/javascript" src="https://unpkg.com/robomx-webdialog@latest/dist/webdialog.min.js"></script>`
+    `<script type="text/javascript" src="https://unpkg.com/@robomx/web-dialog@latest/dist/webdialog.min.js"></script>`
 
 Last add the tag:
 
