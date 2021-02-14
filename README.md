@@ -71,8 +71,8 @@ Last add the tag:
 
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/robomx-webdialog/latest.svg
-[npm-version-href]: https://npmjs.com/package/robomx-webdialog
+[npm-version-src]: https://img.shields.io/npm/v/@robomx/web-dialog/latest.svg
+[npm-version-href]: https://npmjs.com/package/@robomx/web-dialog
 
-[npm-downloads-src]: https://img.shields.io/npm/dt/robomx-webdialog.svg
-[npm-downloads-href]: https://npmjs.com/package/robomx-webdialog
+[npm-downloads-src]: https://img.shields.io/npm/dt/@robomx/web-dialog.svg
+[npm-downloads-href]: https://npmjs.com/package/@robomx/web-dialog
