@@ -7,7 +7,7 @@ if(fse.existsSync('dist')){
     fse.removeSync('dist')
 }
 
-var fileName = 'dist/webdialogalert.min.js';
+var fileName = 'dist/webdialog.min.js';
 
 fse.copySync('src','dist');
 
